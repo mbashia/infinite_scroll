@@ -43,7 +43,9 @@ defmodule InfiniteScrollWeb do
         layouts: [html: InfiniteScrollWeb.Layouts]
 
       import Plug.Conn
-      import InfiniteScrollWeb.Gettext
+
+      use Gettext,
+        backend: InfiniteScrollWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -85,7 +87,9 @@ defmodule InfiniteScrollWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import InfiniteScrollWeb.CoreComponents
-      import InfiniteScrollWeb.Gettext
+
+      use Gettext,
+        backend: InfiniteScrollWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS

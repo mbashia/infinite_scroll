@@ -12,7 +12,9 @@ defmodule InfiniteScrollWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import InfiniteScrollWeb.Gettext
+
+  use Gettext,
+    backend: InfiniteScrollWeb.Gettext
 
   @doc """
   Renders a modal.

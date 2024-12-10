@@ -9,3 +9,9 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias InfiniteScroll.Posts
+
+Enum.map(1..250, fn i ->
+  %{title: "Post #{i}", body: "Body #{i}"}
+  |> Posts.create_post()
+end)
